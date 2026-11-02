@@ -84,6 +84,18 @@ public class Library {
 			barrowedBooks.remove(book);
 			System.out.println(member.getMemberName()+" returned :"+ book.getBookName());
 		}
+		public void listAvailbleBooks() {
+			boolean found = false;
+			for(Book book : books) {
+				if(!book.isBarrowed()) {
+					System.out.println(book);
+					found = true;
+				}
+			}
+			if(!found) {
+				System.out.println("There is no avaible book..");
+			}
+		}
 		
 	
 }
